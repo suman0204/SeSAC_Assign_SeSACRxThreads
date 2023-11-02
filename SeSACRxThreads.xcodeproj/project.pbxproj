@@ -29,6 +29,7 @@
 		041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280722AEFAD4B00972552 /* NicknameViewController.swift */; };
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
 		8B51FEF92AF390B3009F1E50 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FEF82AF390B3009F1E50 /* BirthdayViewModel.swift */; };
+		8B51FF052AF3FDB1009F1E50 /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF042AF3FDB1009F1E50 /* NicknameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		041280722AEFAD4B00972552 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		8B51FEF82AF390B3009F1E50 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		8B51FF042AF3FDB1009F1E50 /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,12 +189,21 @@
 		0412806D2AEFAD0F00972552 /* SignUpOptional */ = {
 			isa = PBXGroup;
 			children = (
+				8B51FF032AF3FD9C009F1E50 /* ViewModel */,
 				0412806E2AEFAD2D00972552 /* BirthdayViewController.swift */,
 				041280702AEFAD3D00972552 /* PhoneViewController.swift */,
 				041280722AEFAD4B00972552 /* NicknameViewController.swift */,
-				8B51FEF82AF390B3009F1E50 /* BirthdayViewModel.swift */,
 			);
 			path = SignUpOptional;
+			sourceTree = "<group>";
+		};
+		8B51FF032AF3FD9C009F1E50 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B51FEF82AF390B3009F1E50 /* BirthdayViewModel.swift */,
+				8B51FF042AF3FDB1009F1E50 /* NicknameViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 			files = (
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
+				8B51FF052AF3FDB1009F1E50 /* NicknameViewModel.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,

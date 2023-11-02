@@ -12,12 +12,14 @@ import RxCocoa
 
 class NicknameViewController: UIViewController {
    
+    let viewModel = NicknameViewModel()
+    
     let nicknameTextField = SignTextField(placeholderText: "닉네임을 입력해주세요")
     let nextButton = PointButton(title: "다음")
     
-    let nickname = PublishSubject<String>()
-    let nextButtonEnabled = BehaviorSubject(value: false)
-    let buttonColor = BehaviorSubject(value: UIColor.red)
+//    let nickname = PublishSubject<String>()
+//    let nextButtonEnabled = BehaviorSubject(value: false)
+//    let buttonColor = BehaviorSubject(value: UIColor.red)
     
     let disposeBag = DisposeBag()
     
@@ -34,36 +36,37 @@ class NicknameViewController: UIViewController {
     }
     
     func bind() {
-        buttonColor
+        viewModel.buttonColor
+            .map { $0.buttonColor }
             .bind(to: nextButton.rx.backgroundColor, nicknameTextField.rx.tintColor)
             .disposed(by: disposeBag)
         
-        buttonColor
-            .map { $0.cgColor }
+        viewModel.buttonColor
+            .map { $0.buttonColor.cgColor }
             .bind(to: nicknameTextField.layer.rx.borderColor)
             .disposed(by: disposeBag)
         
-        nickname
+        viewModel.nickname
             .bind(to: nicknameTextField.rx.text)
             .disposed(by: disposeBag)
         
-        nextButtonEnabled
+        viewModel.nextButtonEnabled
             .bind(to: nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        nickname
-            .map { $0.count >= 2 && $0.count < 6}
-            .subscribe(with: self) { owner, value in
-                let color = value ? UIColor.blue : UIColor.red
-                owner.buttonColor.onNext(color)
-                
-                owner.nextButtonEnabled.onNext(value)
-            }
-            .disposed(by: disposeBag)
+//        viewModel.nickname
+//            .map { $0.count >= 2 && $0.count < 6}
+//            .subscribe(with: self) { owner, value in
+//                let color = value ? ButtonColor.blue : ButtonColor.red
+//                owner.viewModel.buttonColor.onNext(color)
+//                
+//                owner.viewModel.nextButtonEnabled.onNext(value)
+//            }
+//            .disposed(by: disposeBag)
         
         nicknameTextField.rx.text.orEmpty
             .subscribe { value in
-                self.nickname.onNext(value)
+                self.viewModel.nickname.onNext(value)
             }
             .disposed(by: disposeBag)
         
