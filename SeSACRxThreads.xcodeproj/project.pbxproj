@@ -30,6 +30,10 @@
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
 		8B51FEF92AF390B3009F1E50 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FEF82AF390B3009F1E50 /* BirthdayViewModel.swift */; };
 		8B51FF052AF3FDB1009F1E50 /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF042AF3FDB1009F1E50 /* NicknameViewModel.swift */; };
+		8B51FF0D2AF4E820009F1E50 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF0C2AF4E820009F1E50 /* SearchTableViewCell.swift */; };
+		8B51FF0F2AF4E906009F1E50 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF0E2AF4E906009F1E50 /* SearchViewController.swift */; };
+		8B51FF112AF4E941009F1E50 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF102AF4E941009F1E50 /* SearchViewModel.swift */; };
+		8B51FF132AF695F6009F1E50 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF122AF695F6009F1E50 /* Enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,10 @@
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		8B51FEF82AF390B3009F1E50 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		8B51FF042AF3FDB1009F1E50 /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
+		8B51FF0C2AF4E820009F1E50 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		8B51FF0E2AF4E906009F1E50 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8B51FF102AF4E941009F1E50 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		8B51FF122AF695F6009F1E50 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,8 @@
 		041280222AEF9BAB00972552 /* SeSACRxThreads */ = {
 			isa = PBXGroup;
 			children = (
+				8B51FF142AF7B7A5009F1E50 /* ShoppingList */,
+				8B51FF0B2AF4E804009F1E50 /* Search */,
 				041280532AEF9C1F00972552 /* SignUp */,
 				041280542AEF9C2600972552 /* SignIn */,
 				0412806D2AEFAD0F00972552 /* SignUpOptional */,
@@ -173,6 +183,7 @@
 			children = (
 				041280552AEFA04800972552 /* SignInViewController.swift */,
 				041280572AEFA05300972552 /* SignInViewModel.swift */,
+				8B51FF122AF695F6009F1E50 /* Enum.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -204,6 +215,23 @@
 				8B51FF042AF3FDB1009F1E50 /* NicknameViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8B51FF0B2AF4E804009F1E50 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8B51FF0C2AF4E820009F1E50 /* SearchTableViewCell.swift */,
+				8B51FF0E2AF4E906009F1E50 /* SearchViewController.swift */,
+				8B51FF102AF4E941009F1E50 /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		8B51FF142AF7B7A5009F1E50 /* ShoppingList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShoppingList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,8 +376,10 @@
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
 				8B51FF052AF3FDB1009F1E50 /* NicknameViewModel.swift in Sources */,
+				8B51FF0F2AF4E906009F1E50 /* SearchViewController.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
+				8B51FF112AF4E941009F1E50 /* SearchViewModel.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
 				8B51FEF92AF390B3009F1E50 /* BirthdayViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
@@ -358,7 +388,9 @@
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
 				0412806A2AEFA91E00972552 /* SignUpViewController.swift in Sources */,
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
+				8B51FF0D2AF4E820009F1E50 /* SearchTableViewCell.swift in Sources */,
 				041280262AEF9BAB00972552 /* SceneDelegate.swift in Sources */,
+				8B51FF132AF695F6009F1E50 /* Enum.swift in Sources */,
 				041280582AEFA05300972552 /* SignInViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
