@@ -34,6 +34,10 @@
 		8B51FF0F2AF4E906009F1E50 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF0E2AF4E906009F1E50 /* SearchViewController.swift */; };
 		8B51FF112AF4E941009F1E50 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF102AF4E941009F1E50 /* SearchViewModel.swift */; };
 		8B51FF132AF695F6009F1E50 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF122AF695F6009F1E50 /* Enum.swift */; };
+		8B51FF162AF7D400009F1E50 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF152AF7D400009F1E50 /* ShoppingListViewController.swift */; };
+		8B51FF182AF7D436009F1E50 /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF172AF7D436009F1E50 /* ShoppingListTableViewCell.swift */; };
+		8B51FF1A2AF7D811009F1E50 /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF192AF7D811009F1E50 /* ShoppingViewModel.swift */; };
+		8B51FF1C2AF7F366009F1E50 /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF1B2AF7F366009F1E50 /* ShoppingItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,10 @@
 		8B51FF0E2AF4E906009F1E50 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8B51FF102AF4E941009F1E50 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8B51FF122AF695F6009F1E50 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		8B51FF152AF7D400009F1E50 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		8B51FF172AF7D436009F1E50 /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
+		8B51FF192AF7D811009F1E50 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
+		8B51FF1B2AF7F366009F1E50 /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +238,10 @@
 		8B51FF142AF7B7A5009F1E50 /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				8B51FF152AF7D400009F1E50 /* ShoppingListViewController.swift */,
+				8B51FF172AF7D436009F1E50 /* ShoppingListTableViewCell.swift */,
+				8B51FF192AF7D811009F1E50 /* ShoppingViewModel.swift */,
+				8B51FF1B2AF7F366009F1E50 /* ShoppingItem.swift */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -376,15 +388,19 @@
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
 				8B51FF052AF3FDB1009F1E50 /* NicknameViewModel.swift in Sources */,
+				8B51FF182AF7D436009F1E50 /* ShoppingListTableViewCell.swift in Sources */,
 				8B51FF0F2AF4E906009F1E50 /* SearchViewController.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				8B51FF112AF4E941009F1E50 /* SearchViewModel.swift in Sources */,
+				8B51FF1A2AF7D811009F1E50 /* ShoppingViewModel.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
+				8B51FF1C2AF7F366009F1E50 /* ShoppingItem.swift in Sources */,
 				8B51FEF92AF390B3009F1E50 /* BirthdayViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
+				8B51FF162AF7D400009F1E50 /* ShoppingListViewController.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
 				0412806A2AEFA91E00972552 /* SignUpViewController.swift in Sources */,
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
