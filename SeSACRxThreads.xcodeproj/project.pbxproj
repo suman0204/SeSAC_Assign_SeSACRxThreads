@@ -43,6 +43,10 @@
 		8B51FF2E2AF8F9D2009F1E50 /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF2D2AF8F9D2009F1E50 /* BoxOfficeViewController.swift */; };
 		8B51FF302AF8FA30009F1E50 /* BoxOfficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF2F2AF8FA30009F1E50 /* BoxOfficeTableViewCell.swift */; };
 		8B51FF322AF916AE009F1E50 /* BoxOfiiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF312AF916AE009F1E50 /* BoxOfiiceViewModel.swift */; };
+		8B51FF372AF92C25009F1E50 /* iTunesSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF362AF92C25009F1E50 /* iTunesSearchModel.swift */; };
+		8B51FF392AF92C4D009F1E50 /* iTunesAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF382AF92C4D009F1E50 /* iTunesAPIManager.swift */; };
+		8B51FF3D2AF92ED5009F1E50 /* iTunesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF3C2AF92ED5009F1E50 /* iTunesSearchViewController.swift */; };
+		8B51FF3F2AF92EEE009F1E50 /* iTunesSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF3E2AF92EEE009F1E50 /* iTunesSearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,10 @@
 		8B51FF2D2AF8F9D2009F1E50 /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
 		8B51FF2F2AF8FA30009F1E50 /* BoxOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewCell.swift; sourceTree = "<group>"; };
 		8B51FF312AF916AE009F1E50 /* BoxOfiiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfiiceViewModel.swift; sourceTree = "<group>"; };
+		8B51FF362AF92C25009F1E50 /* iTunesSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchModel.swift; sourceTree = "<group>"; };
+		8B51FF382AF92C4D009F1E50 /* iTunesAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPIManager.swift; sourceTree = "<group>"; };
+		8B51FF3C2AF92ED5009F1E50 /* iTunesSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchViewController.swift; sourceTree = "<group>"; };
+		8B51FF3E2AF92EEE009F1E50 /* iTunesSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +161,7 @@
 		041280222AEF9BAB00972552 /* SeSACRxThreads */ = {
 			isa = PBXGroup;
 			children = (
+				8B51FF332AF92673009F1E50 /* iTunes */,
 				8B51FF222AF8F05C009F1E50 /* Movie */,
 				8B51FF142AF7B7A5009F1E50 /* ShoppingList */,
 				8B51FF0B2AF4E804009F1E50 /* Search */,
@@ -281,6 +290,33 @@
 				8B51FF2D2AF8F9D2009F1E50 /* BoxOfficeViewController.swift */,
 				8B51FF2F2AF8FA30009F1E50 /* BoxOfficeTableViewCell.swift */,
 				8B51FF312AF916AE009F1E50 /* BoxOfiiceViewModel.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		8B51FF332AF92673009F1E50 /* iTunes */ = {
+			isa = PBXGroup;
+			children = (
+				8B51FF342AF92686009F1E50 /* Network */,
+				8B51FF352AF9268D009F1E50 /* Scene */,
+			);
+			path = iTunes;
+			sourceTree = "<group>";
+		};
+		8B51FF342AF92686009F1E50 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8B51FF362AF92C25009F1E50 /* iTunesSearchModel.swift */,
+				8B51FF382AF92C4D009F1E50 /* iTunesAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8B51FF352AF9268D009F1E50 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				8B51FF3C2AF92ED5009F1E50 /* iTunesSearchViewController.swift */,
+				8B51FF3E2AF92EEE009F1E50 /* iTunesSearchTableViewCell.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -430,13 +466,17 @@
 				8B51FF322AF916AE009F1E50 /* BoxOfiiceViewModel.swift in Sources */,
 				8B51FF182AF7D436009F1E50 /* ShoppingListTableViewCell.swift in Sources */,
 				8B51FF0F2AF4E906009F1E50 /* SearchViewController.swift in Sources */,
+				8B51FF392AF92C4D009F1E50 /* iTunesAPIManager.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				8B51FF112AF4E941009F1E50 /* SearchViewModel.swift in Sources */,
+				8B51FF372AF92C25009F1E50 /* iTunesSearchModel.swift in Sources */,
+				8B51FF3F2AF92EEE009F1E50 /* iTunesSearchTableViewCell.swift in Sources */,
 				8B51FF1A2AF7D811009F1E50 /* ShoppingViewModel.swift in Sources */,
 				8B51FF302AF8FA30009F1E50 /* BoxOfficeTableViewCell.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
 				8B51FF1C2AF7F366009F1E50 /* ShoppingItem.swift in Sources */,
+				8B51FF3D2AF92ED5009F1E50 /* iTunesSearchViewController.swift in Sources */,
 				8B51FEF92AF390B3009F1E50 /* BirthdayViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,

@@ -29,6 +29,7 @@ class BoxOfficeViewController: UIViewController {
     
     let searchBar = {
         let view = UISearchBar()
+        view.placeholder = "검색할 날짜를 입력해주세요 ex)20230101"
         return view
     }()
     
