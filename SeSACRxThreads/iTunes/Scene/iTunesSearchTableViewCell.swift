@@ -20,6 +20,7 @@ class iTunesSearchTableViewCell: UITableViewCell {
     
     let appIcon = {
         let view = UIImageView()
+        view.frame = .zero
         view.layer.cornerRadius = 8
         view.layer.cornerCurve = .continuous
         return view
@@ -44,6 +45,11 @@ class iTunesSearchTableViewCell: UITableViewCell {
         stack.distribution = .equalSpacing
 //        stack.spacing = 10
         return stack
+    }()
+    
+    let rateView = {
+        let view = UIView()
+        return view
     }()
     
     let starImage = {
@@ -77,6 +83,9 @@ class iTunesSearchTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        configureView()
+        setConstraints()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -88,7 +97,11 @@ class iTunesSearchTableViewCell: UITableViewCell {
             topView.addSubview($0)
         }
         
-        [starImage, rateLabel, sellerNameLabel, categoryLabel].forEach {
+        [starImage, rateLabel].forEach {
+            rateView.addSubview($0)
+        }
+        
+        [rateView, sellerNameLabel, categoryLabel].forEach {
             containerStackView.addArrangedSubview($0)
         }
         
@@ -98,6 +111,8 @@ class iTunesSearchTableViewCell: UITableViewCell {
     }
     
     private func setConstraints() {
+        
+        //TopView
         topView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.horizontalEdges.equalToSuperview()
@@ -119,6 +134,24 @@ class iTunesSearchTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview().offset(-10)
             make.width.equalToSuperview().multipliedBy(0.1)
             make.height.equalToSuperview().multipliedBy(0.1)
+        }
+        
+        //MiddleStackView
+        containerStackView.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalTo(topView.snp.bottom)
+            make.height.equalToSuperview().multipliedBy(0.1)
+        }
+        
+        //RateView
+        starImage.snp.makeConstraints { make in
+            make.size.equalTo(10)
+            make.leading.equalToSuperview()
+        }
+        
+        rateLabel.snp.makeConstraints { make in
+            make.leading.equalTo(starImage.snp.trailing).offset(10)
+            make.verticalEdges.equalToSuperview()
         }
     }
     

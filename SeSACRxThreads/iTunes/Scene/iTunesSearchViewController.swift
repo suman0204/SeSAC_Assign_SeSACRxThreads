@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class iTunesSearchViewController: UIViewController {
     
@@ -21,6 +22,11 @@ class iTunesSearchViewController: UIViewController {
         return view
     }()
     
+    var data: [AppInfo] = []
+    
+    lazy var items = BehaviorSubject(value: data)
+    
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +34,41 @@ class iTunesSearchViewController: UIViewController {
         configureView()
         setConstraints()
         makeSearchBar()
+        
+        bind()
+    }
+    
+    func bind() {
+        let searchBar = navigationItem.searchController!.searchBar
+        
+        searchBar.rx.searchButtonClicked
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .withLatestFrom(searchBar.rx.text.orEmpty) { void, text in
+                print(text)
+                return text
+            }
+            .flatMap { query in
+                iTunesAPIManager.fetchData(query: query)
+            }
+            .subscribe(with: self) { owner, response in
+                print(response)
+                owner.items.onNext(response.results)
+            }
+            .disposed(by: disposeBag)
+        
+        items
+            .bind(to: searchResultsTableView.rx.items(cellIdentifier: iTunesSearchTableViewCell.identifier, cellType: iTunesSearchTableViewCell.self)) { (row, element, cell) in
+                
+                cell.appIcon.kf.setImage(with: URL(string: element.artworkUrl512))
+                cell.appTitleLabel.text = element.trackName
+                cell.categoryLabel.text = element.genres[0]
+                cell.rateLabel.text = "\(element.averageUserRating)"
+                cell.sellerNameLabel.text = element.sellerName
+                
+            }
+            .disposed(by: disposeBag)
+        
+        
     }
     
     private func configureView() {
