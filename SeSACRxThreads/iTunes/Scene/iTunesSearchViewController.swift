@@ -17,7 +17,7 @@ class iTunesSearchViewController: UIViewController {
         let view = UITableView()
         view.register(iTunesSearchTableViewCell.self, forCellReuseIdentifier: iTunesSearchTableViewCell.identifier)
         view.separatorStyle = .none
-        view.rowHeight = 200
+        view.rowHeight = 300
         view.backgroundColor = .blue
         return view
     }()
@@ -27,6 +27,8 @@ class iTunesSearchViewController: UIViewController {
     lazy var items = BehaviorSubject(value: data)
     
     let disposeBag = DisposeBag()
+    
+    let viewModel = iTunesSearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,22 +43,27 @@ class iTunesSearchViewController: UIViewController {
     func bind() {
         let searchBar = navigationItem.searchController!.searchBar
         
-        searchBar.rx.searchButtonClicked
-            .throttle(.seconds(1), scheduler: MainScheduler.instance)
-            .withLatestFrom(searchBar.rx.text.orEmpty) { void, text in
-                print(text)
-                return text
-            }
-            .flatMap { query in
-                iTunesAPIManager.fetchData(query: query)
-            }
-            .subscribe(with: self) { owner, response in
-                print(response)
-                owner.items.onNext(response.results)
-            }
-            .disposed(by: disposeBag)
+        let input = iTunesSearchViewModel.Input(searchButtonClicked: searchBar.rx.searchButtonClicked, searchText: searchBar.rx.text.orEmpty)
         
-        items
+        let output = viewModel.transform(input: input)
+        
+//        searchBar.rx.searchButtonClicked // input
+//            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+//            .withLatestFrom(searchBar.rx.text.orEmpty)/*input*/ { void, text in
+//                print(text)
+//                return text
+//            }
+//            .flatMap { query in
+//                iTunesAPIManager.fetchData(query: query)
+//            }
+//            .subscribe(with: self) { owner, response in
+//                print(response)
+//                owner.items.onNext(response.results) /*output*/
+//            }
+//            .disposed(by: disposeBag)
+        
+        output.items
+//        items
             .bind(to: searchResultsTableView.rx.items(cellIdentifier: iTunesSearchTableViewCell.identifier, cellType: iTunesSearchTableViewCell.self)) { (row, element, cell) in
                 
                 cell.appIcon.kf.setImage(with: URL(string: element.artworkUrl512))
@@ -64,7 +71,10 @@ class iTunesSearchViewController: UIViewController {
                 cell.categoryLabel.text = element.genres[0]
                 cell.rateLabel.text = "\(element.averageUserRating)"
                 cell.sellerNameLabel.text = element.sellerName
-                
+                cell.firstScreenshotImage.kf.setImage(with: URL(string: element.screenshotUrls[0]))
+                cell.secondScreenshotImage.kf.setImage(with: URL(string: element.screenshotUrls[1]))
+                cell.thirdScreenshotImage.kf.setImage(with: URL(string: element.screenshotUrls[2]))
+
             }
             .disposed(by: disposeBag)
         
