@@ -51,6 +51,11 @@
 		8B51FF512AFBC5FE009F1E50 /* iTunesSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF502AFBC5FE009F1E50 /* iTunesSearchViewModel.swift */; };
 		8B51FF532AFBD27A009F1E50 /* iTunesSearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF522AFBD27A009F1E50 /* iTunesSearchDetailViewController.swift */; };
 		8B51FF552AFBDB0E009F1E50 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FF542AFBDB0E009F1E50 /* ViewModelType.swift */; };
+		8B51FFDA2B02571B009F1E50 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FFD92B02571B009F1E50 /* SignUpViewModel.swift */; };
+		8B51FFDD2B0258C0009F1E50 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8B51FFDC2B0258C0009F1E50 /* Moya */; };
+		8B51FFE02B025967009F1E50 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FFDF2B025967009F1E50 /* API.swift */; };
+		8B51FFE22B025C01009F1E50 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FFE12B025C01009F1E50 /* APIModel.swift */; };
+		8B51FFE42B02671E009F1E50 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51FFE32B02671E009F1E50 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +120,10 @@
 		8B51FF502AFBC5FE009F1E50 /* iTunesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchViewModel.swift; sourceTree = "<group>"; };
 		8B51FF522AFBD27A009F1E50 /* iTunesSearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchDetailViewController.swift; sourceTree = "<group>"; };
 		8B51FF542AFBDB0E009F1E50 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		8B51FFD92B02571B009F1E50 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		8B51FFDF2B025967009F1E50 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8B51FFE12B025C01009F1E50 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		8B51FFE32B02671E009F1E50 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +134,7 @@
 				8B51FF462AFA954D009F1E50 /* Kingfisher in Frameworks */,
 				041280602AEFA0AC00972552 /* SnapKit in Frameworks */,
 				0412805D2AEFA09E00972552 /* RxSwift in Frameworks */,
+				8B51FFDD2B0258C0009F1E50 /* Moya in Frameworks */,
 				0412805B2AEFA09E00972552 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,8 +218,10 @@
 		041280532AEF9C1F00972552 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				8B51FFDE2B0258EB009F1E50 /* SignUpNetwork */,
 				041280692AEFA91E00972552 /* SignUpViewController.swift */,
 				0412806B2AEFABFE00972552 /* PasswordViewController.swift */,
+				8B51FFD92B02571B009F1E50 /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -332,6 +344,16 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		8B51FFDE2B0258EB009F1E50 /* SignUpNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				8B51FFDF2B025967009F1E50 /* API.swift */,
+				8B51FFE12B025C01009F1E50 /* APIModel.swift */,
+				8B51FFE32B02671E009F1E50 /* APIManager.swift */,
+			);
+			path = SignUpNetwork;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -353,6 +375,7 @@
 				0412805C2AEFA09E00972552 /* RxSwift */,
 				0412805F2AEFA0AC00972552 /* SnapKit */,
 				8B51FF452AFA954D009F1E50 /* Kingfisher */,
+				8B51FFDC2B0258C0009F1E50 /* Moya */,
 			);
 			productName = SeSACRxThreads;
 			productReference = 041280202AEF9BAB00972552 /* SeSACRxThreads.app */;
@@ -430,6 +453,7 @@
 				041280592AEFA09D00972552 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				0412805E2AEFA0AC00972552 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8B51FF442AFA954D009F1E50 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8B51FFDB2B0258C0009F1E50 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 041280212AEF9BAB00972552 /* Products */;
 			projectDirPath = "";
@@ -481,6 +505,7 @@
 				8B51FF0F2AF4E906009F1E50 /* SearchViewController.swift in Sources */,
 				8B51FF392AF92C4D009F1E50 /* iTunesAPIManager.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
+				8B51FFE02B025967009F1E50 /* API.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				8B51FF112AF4E941009F1E50 /* SearchViewModel.swift in Sources */,
 				8B51FF372AF92C25009F1E50 /* iTunesSearchModel.swift in Sources */,
@@ -495,6 +520,7 @@
 				8B51FEF92AF390B3009F1E50 /* BirthdayViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
+				8B51FFDA2B02571B009F1E50 /* SignUpViewModel.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				8B51FF162AF7D400009F1E50 /* ShoppingListViewController.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
@@ -507,6 +533,8 @@
 				8B51FF132AF695F6009F1E50 /* Enum.swift in Sources */,
 				8B51FF2C2AF8F132009F1E50 /* BoxOfficeModel.swift in Sources */,
 				041280582AEFA05300972552 /* SignInViewModel.swift in Sources */,
+				8B51FFE42B02671E009F1E50 /* APIManager.swift in Sources */,
+				8B51FFE22B025C01009F1E50 /* APIModel.swift in Sources */,
 				8B51FF532AFBD27A009F1E50 /* iTunesSearchDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -876,6 +904,14 @@
 				minimumVersion = 7.10.0;
 			};
 		};
+		8B51FFDB2B0258C0009F1E50 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -898,6 +934,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B51FF442AFA954D009F1E50 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		8B51FFDC2B0258C0009F1E50 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B51FFDB2B0258C0009F1E50 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

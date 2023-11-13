@@ -7,8 +7,14 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SignUpViewController: UIViewController {
+    
+    let disposeBag = DisposeBag()
+    
+//    let email = BehaviorSubject(value: "")
 
     let emailTextField = SignTextField(placeholderText: "이메일을 입력해주세요")
     let validationButton = UIButton()
@@ -23,11 +29,39 @@ class SignUpViewController: UIViewController {
         configure()
         
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        
+        bind()
 
     }
     
     @objc func nextButtonClicked() {
         navigationController?.pushViewController(PasswordViewController(), animated: true)
+    }
+    
+    func bind() {
+        //input
+        emailTextField.rx.text.orEmpty
+            .map { $0.isValidEmail()}
+            .subscribe(with: self) { owner, value in
+                owner.validationButton.rx.isEnabled.onNext(value)
+                
+                let color = value ? UIColor.black : UIColor.gray
+                owner.validationButton.layer.rx.borderColor.onNext(color.cgColor)
+                owner.validationButton.setTitleColor(color, for: .normal)
+            }
+            .disposed(by: disposeBag)
+        
+        validationButton.rx.tap
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .withLatestFrom(emailTextField.rx.text.orEmpty) { void, email in
+                return email
+            }
+            .subscribe(with: self) { owner, email in
+                print("tapped")
+                APIManager.shared.emailValid(email: email)
+            }
+            .disposed(by: disposeBag)
+            
     }
 
     func configure() {
@@ -65,4 +99,13 @@ class SignUpViewController: UIViewController {
     }
     
 
+}
+
+
+extension String {
+    func isValidEmail() -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: self)
+    }
 }
