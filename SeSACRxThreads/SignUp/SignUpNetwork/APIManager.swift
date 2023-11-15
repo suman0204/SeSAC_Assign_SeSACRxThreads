@@ -16,12 +16,19 @@ class APIManager {
     
     let provider = MoyaProvider<API>()
     
-    func emailValid(email: String) {
+    func emailValid(email: String, completionHandler: @escaping (Int) -> Void ) {
         
-        provider.request(.emailValidation(email: email)) { result in
+        provider.request(.emailValidation(model: emailValidation(email: email))) { result in
             switch result {
             case.success(let value):
                 print("Success", value.statusCode, value.data)
+                
+                let result = try! JSONDecoder().decode(emailValidationResponse.self, from: value.data)
+                
+                print(result.message)
+                
+                completionHandler(value.statusCode)
+                
             case .failure(let error):
                 print("error---", error)
             }

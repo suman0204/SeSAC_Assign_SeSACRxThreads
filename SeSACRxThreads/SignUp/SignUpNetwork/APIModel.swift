@@ -18,6 +18,14 @@ struct SignIn: Encodable {
     let password: String
 }
 
+struct emailValidation: Encodable {
+    let email: String
+}
+
+struct emailValidationResponse: Decodable {
+    let message: String
+}
+
 struct JoinResponse: Decodable {
     let email: String
     let nick: String

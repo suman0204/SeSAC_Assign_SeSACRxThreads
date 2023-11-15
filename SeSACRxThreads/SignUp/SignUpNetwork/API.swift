@@ -10,7 +10,7 @@ import Moya
 
 enum API {
     case signUp(model: Join)
-    case emailValidation(email: String)
+    case emailValidation(model: emailValidation)
     case signIn(model: SignIn)
 }
 
